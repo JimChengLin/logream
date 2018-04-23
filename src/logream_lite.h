@@ -12,6 +12,7 @@
  * 单记录最大长度: 64KB 格式: varint + data + crc32c
  */
 
+#include <condition_variable>
 #include <deque>
 #include <mutex>
 

@@ -1,3 +1,4 @@
+#include <chrono>
 #include <fstream>
 #include <iostream>
 #include <thread>
@@ -58,6 +59,8 @@ std::cout << #name " took " << std::chrono::duration_cast<std::chrono::milliseco
                     }
                 }
             }
+        } else {
+            return;
         }
 
         WriterHelper w_helper;

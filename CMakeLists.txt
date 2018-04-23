@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.8)
 project(logream)
 
 set(CMAKE_CXX_STANDARD 17)
@@ -18,3 +18,7 @@ add_executable(logream main.cpp
         src/prefetch.h
         src/slice.h
         )
+
+set(THREADS_PREFER_PTHREAD_FLAG ON)
+find_package(Threads REQUIRED)
+target_link_libraries(logream Threads::Threads)

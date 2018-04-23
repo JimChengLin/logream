@@ -1,4 +1,6 @@
+#include <algorithm>
 #include <array>
+#include <climits>
 
 #include "bloom.h"
 #include "coding.h"

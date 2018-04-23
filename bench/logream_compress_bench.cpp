@@ -1,3 +1,4 @@
+#include <chrono>
 #include <fstream>
 #include <iostream>
 
@@ -55,6 +56,8 @@ std::cout << #name " took " << std::chrono::duration_cast<std::chrono::milliseco
                     }
                 }
             }
+        } else {
+            return;
         }
 
         size_t w_total = 0;
