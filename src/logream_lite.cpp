@@ -82,7 +82,7 @@ namespace logream {
     }
 
     size_t ReaderLite::Get(size_t id, std::string * s) const {
-        auto & b = const_cast<std::string &>(backup_);
+        std::string & b = *s;
         b.resize(kMaxVarint32Length);
         helper_->ReadAt(id, kMaxVarint32Length, b.data());
         Slice buf(b);
@@ -107,7 +107,8 @@ namespace logream {
         if (crc32c::Value(buf.data(), buf.size()) != crc) {
             return 0;
         }
-        s->append(buf.data(), buf.size());
+        memmove(s->data(), buf.data(), buf.size());
+        s->resize(buf.size());
         return id + read_size;
     }
 }

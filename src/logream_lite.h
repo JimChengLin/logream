@@ -64,7 +64,6 @@ namespace logream {
     class ReaderLite : public Reader {
     private:
         Helper * const helper_;
-        std::string backup_;
 
     public:
         explicit ReaderLite(Helper * helper)
